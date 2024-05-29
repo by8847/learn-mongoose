@@ -3,11 +3,11 @@
     "version": "0.0.1",
     "description": "몽구스를 배우자",
     "main": "app.js",
-    "script": {
+    "scripts": {
         "start": "nodemon app"
     },
-    "author": "memilmuk82",
-    "license": "UNLISENCED",
+    "author": "by8847",
+    "license": "UNLISENCSED",
     "dependencies": {
         "express": "^4.19.2",
         "mongoose": "^8.4.0",
