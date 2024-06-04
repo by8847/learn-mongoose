@@ -15,7 +15,7 @@ async function getUser() {
         const tbody = document.querySelector('#user-list tbody'); // 사용자 목록이 표시될 테이블의 tbody를 선택
         tbody.innerHTML = ''; // 이전에 추가된 내용 삭제
         // 사용자 정보를 순회하며 테이블에 사용자를 추가
-        users.map(function (usre) {
+        users.map(function (user) {
             const row = document.createElement('tr'); // 새로운 행을 생성
             row.addEventListener('click', () => {
                 getComment(user._id); // 해당 사용자의 댓글을 가져오는 함수를 호출
@@ -109,7 +109,7 @@ async function getComment(id) {
 document.getElementById('user-form').addEventListener('submit', async (e) => {
     e.preventDefault(); // 기본 동작을 막습니다(페이지 새로고침 방지).
     const name = e.target.username.value; // 입력된 사용자 이름을 가져옵니다.
-    const age = e.tearget.age.value; //입력된 사용자 나이를 가져옵니다.
+    const age = e.target.age.value; //입력된 사용자 나이를 가져옵니다.
     const married = e.target.married.checked; // 결혼 여부를 가져옵니다.
     if (!name) {
         return alert('이름을 입력하세요'); // 이름이 입력되지 앟은 경우 경고를 표시하고 함수 종료
@@ -149,4 +149,4 @@ document.getElementById('comment-form').addEventListener('submit', async (e) => 
     // 폼 입력 필드 초기화
     e.target.userid.value = '';
     e.target.comment.value = '';
-})
+});

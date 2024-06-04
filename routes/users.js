@@ -10,7 +10,7 @@ router.route('/')
         try {
             // 모든 사용자 조회
             const users = await User.find({});
-            //조회죈 사용자 목록을 JSON 형태로 응답
+            // 조회된 사용자 목록을 JSON 형태로 응답
             res.json(users);
         } catch (err) {
             console.error(err);
@@ -19,7 +19,7 @@ router.route('/')
     })
     .post(async (req, res, next) => {
         try {
-            // 요청 바다에서 사용자 정보를 추출하여 새 사용자를 생성
+            // 요청 바디에서 사용자 정보를 추출하여 새 사용자를 생성
             const user = await User.create({
                 name: req.body.name,
                 age: req.body.age,

@@ -28,7 +28,7 @@ mongoose.connection.on('error', (error) => {
 // 몽구스 연결 객체의 'disconnected' 이벤트 리스너 설정
 mongoose.connection.on('disconnected', () => {
     console.error('몽고디비 연결이 끊어졌습니다. 연결을 재시도합니다.'); // 연결이 끊긴 경우 -> 메시지 출력
-    mongoose.connect(); // 연결을 재시도 하기 위해 coonect 함수 호출
+    connect(); // 연결을 재시도 하기 위해 coonect 함수 호출
 });
 
 // 모듈에 connect 함수 할당 -> 외부 사용 가능

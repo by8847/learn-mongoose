@@ -7,12 +7,12 @@ const { Schema } = mongoose;
 const { Types: { ObjectId } } = Schema;
 
 // 댓글 스키마 정의
-const commnetSchema = new Schema({
+const commentSchema = new Schema({
     // 댓글 작성자 필드 정의
     commneter: {
         type: ObjectId, // 데이터 타입 -> ObjectId
         required: true, // 필수 필드로 설정
-        unique: "User", // 'User' 모델과의 관계 설정
+        ref: "User", // 'User' 모델과의 관계 설정
     },
     // 댓글 내용 필드 정의
     comment: {
@@ -27,4 +27,4 @@ const commnetSchema = new Schema({
 });
 
 // User 모델 생성 -> 외부에서 사용할 수 있도록 모듈로 내보냄
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Comment', commentSchema); 

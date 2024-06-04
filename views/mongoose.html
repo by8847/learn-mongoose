@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style></style>
     <meta charset="UTF-8">
     <title>몽구스 서버</title>
     <style>
         table { border: 1px solid black; border-collapse: collapse; }
         table th, table td { border: 1px solid black; }
     </style>
+
 </head>
 <body>
     <div>
@@ -43,12 +45,12 @@
     </table>
     <br>
     <div>
-        <form id="commnet-form">
+        <form id="comment-form">
             <fieldset>
                 <legend>댓글 등록</legend>
                 <div><input id="userid" type="text" placeholder="사용자 아이디"></div>
                 <div><input id="comment" type="text" placeholder="댓글"></div>
-                <button type="submit"></button>
+                <button type="submit">등록</button>
             </fieldset>
         </form>
     </div>
@@ -67,5 +69,6 @@
     </table>
     <script src="https://unpkg.com/axiox/dist/axios.min.js"></script>
     <script src="/mongoose.js"></script>
+    <script src="/public/moo.js"></script>
 </body>
 </html>
