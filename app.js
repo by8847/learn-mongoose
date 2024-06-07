@@ -11,7 +11,7 @@ const usersRouter = require('./routes/users');
 const commentsRouter = require('./routes/comments');
 
 const app = express(); // Express 애플리케이션 생성
-app.set('port', process.env.PORT || 3002); // 환경 변수에서 PORT 가져오거나 포트 기본값을 3000로 설정
+app.set('port', process.env.PORT || 3001); // 환경 변수에서 PORT 가져오거나 포트 기본값을 3000로 설정
 app.set('view engine', 'html'); // 뷰 엔진 -> html로 설정
 
 // Nunjucks 설정
@@ -34,7 +34,7 @@ app.use('/comments', commentsRouter);
 
 // 404 에러 처리 미들웨어
 app.use((req, res, next) => {
-    const error = new Error('${req.method} ${req.url} 라우터가 없습니다.');
+    const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
     error.status = 404; // 에러 상태 코드 -> 404로 설정
     next(error); // 다음 미들웨어로 해당 에러 전달
 });
